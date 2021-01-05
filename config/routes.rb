@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+ resources :pokemons
+ resources :users
+ resources :teams
+ resources :team_members
+ 
+  get '/login', to: "auth#login"
+  post '/register', to: "auth#create"
+  get '/logout', to: "auth#logout"
+  post '/new_team', to: "teams#create"
+ 
 end
